@@ -1,38 +1,93 @@
 .App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.heading{
   text-align: center;
+  font-size: 60px;
+  font-family:'Courier New', Courier, monospace;
+}
+.phogallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.imagecon {
+  width: 100%;
+  height: 200px; 
+  overflow: hidden;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.imagecon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease; 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.imagecon:hover img {
+  transform: scale(1.2); 
+}
+
+.imagesizer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.imagesizer img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gallerymouse:hover .zoomed-image {
+  opacity: 1;
+}
+
+.searchinput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.searchinput input {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.searchinput select {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.searchinput button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.searchinput button:hover {
+  background-color: #0056b3;
 }
